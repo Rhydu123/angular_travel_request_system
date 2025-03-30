@@ -1,0 +1,56 @@
+:root {
+    --primary-dark: #2D336B;
+    --primary-light: #7886C7;
+    --secondary-blue: #4A56A6;
+    --background-light: #FFF2F2;
+}
+
+/* Body */
+body {
+    background-color: var(--background-light);
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 60px;
+}
+
+/* Navbar */
+.custom-navbar {
+    background: var(--primary-dark);
+    height: 60px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1030;
+}
+
+/* Main Content */
+.main-wrapper {
+    margin-top: 80px;
+    padding: 20px;
+}
+
+/* Form Container */
+.form-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Submit Button */
+.btn-submit {
+    background-color: var(--primary-dark);
+    color: white;
+    border-radius: 20px;
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.btn-submit:hover {
+    background-color: var(--secondary-blue);
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Login page for Reflections Travel Request - Secure Employee Access">
+    <meta name="keywords" content="Login, Employee Portal, Secure Access">
+    <meta name="author" content="Your Name">
+    
+    <title>Login - Reflections Travel Request</title>
+    
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <!-- Custom CSS -->
+    <style>
+        /* Global Styles */
+        :root {
+            --primary-color: #2D336B;
+            --secondary-color: #7886C7;
+            --hover-color: #A9B5DF;
+            --background-color: rgba(255, 242, 242, 0.9);
+            --light-color: #F0F3FF; /* Light color from palette for background */
+            --success-color: #28a745;
+        }
+
+        /* Body */
+        body {
+            background-color: var(--light-color);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--primary-color) !important;
+        }
+
+        .navbar-brand {
+            color: white !important;
+            font-weight: bold;
+        }
+
+        /* Dropdown */
+        .dropdown-menu {
+            background-color: var(--secondary-color) !important;
+            min-width: 10%;
+        }
+
+        .dropdown-item {
+            color: white !important;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--hover-color) !important;
+            color: black !important;
+        }
+
+        /* Login Container */
+        .login-container {
+            background: var(--background-color);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Form Elements */
+        .form-control {
+            background-color: #FFF2F2;
+            border: 1px solid var(--hover-color);
+        }
+
+        /* Button */
+        .btn-login {
+            background-color: var(--primary-color);
+            color: white;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .btn-login:hover {
+            background-color: var(--secondary-color);
+        }
+
+        /* Success Message */
+        .success-message {
+            background-color: rgba(40, 167, 69, 0.1);
+            border-left: 4px solid var(--success-color);
+            padding: 10px 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+        }
+
+        .success-icon {
+            color: var(--success-color);
+            margin-right: 10px;
+            font-size: 1.2em;
+        }
+
+        /* Accessibility */
+        *:focus {
+            outline: 2px solid var(--hover-color);
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand fw-bold" href="#">Reflections Travel Request</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login Form -->
+    <main>
+        <div class="container d-flex justify-content-center align-items-center vh-100">
+            <section class="login-container col-11 col-sm-8 col-md-6 col-lg-4">
+                <h1 class="text-center mb-4">Login</h1>
+                <form (submit)="onSubmit()">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" [(ngModel)]="loginData.username" name="username" placeholder="Enter username" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" [(ngModel)]="loginData.password" name="password" placeholder="Enter password" required>
+                    </div>
+                    <button type="submit" class="btn btn-login w-100" [disabled]="loading">Login</button>
+                    
+                    <!-- Success Message (conditionally shown based on login status) -->
+                    <div *ngIf="loginSuccess" class="success-message">
+                        <span class="success-icon">✓</span>
+                        <span>Login successful! Redirecting to dashboard...</span>
+                    </div>
+                    
+                    <!-- Error Message (from your original code) -->
+                    <p *ngIf="errorMessage" class="text-danger mt-2">{{ errorMessage }}</p>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
